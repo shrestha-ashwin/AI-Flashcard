@@ -2,6 +2,7 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
+  console.log("hit the server");
   try {
     const { amount } = await req.json();
 
