@@ -64,7 +64,7 @@ export default function CheckoutPage({ amount }: { amount: number }) {
       {errorMsg && <div className="m-2">{errorMsg}</div>}
       <button
         disabled={!stripe || isLoading}
-        className="bg-black text-white p-5 rounded-md mt-3 w-full font-bold disabled:opacity-50 "
+        className="bg-black text-white p-5 rounded-md mt-5 w-full font-bold disabled:opacity-50 "
       >
         {!isLoading ? `Pay $${amount}` : "...Processing"}
       </button>
