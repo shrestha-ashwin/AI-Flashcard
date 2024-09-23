@@ -5,3 +5,7 @@
 .card {
   @apply max-w-[300px] bg-white px-3 py-4 flex flex-col items-center rounded-lg;
 }
+
+.card-grid {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
