@@ -9,3 +9,20 @@
 .card-grid {
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
 }
+
+@media (max-width: 526px) {
+  .card {
+    @apply max-w-[375px] bg-white px-3 py-4 flex flex-col items-center rounded-lg;
+  }
+}
+
+@media (max-width: 793px) and (min-width: 530px) {
+  .card-3 {
+    grid-column: span 2;
+    margin-top: 10px;
+  }
+
+  .card {
+    max-width: 325px;
+  }
+}
