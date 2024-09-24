@@ -1,9 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .card {
-  @apply max-w-[300px] bg-white px-3 py-4 flex flex-col items-center rounded-lg;
+  @apply max-w-[300px] bg-lightGrey px-3 py-4 flex flex-col items-center rounded-2xl border-2 border-borderGrey opacity-100;
 }
 
 .card-grid {
@@ -12,7 +14,7 @@
 
 @media (max-width: 526px) {
   .card {
-    @apply max-w-[375px] bg-white px-3 py-4 flex flex-col items-center rounded-lg;
+    @apply max-w-[375px] bg-lightGrey px-3 py-4 flex flex-col items-center rounded-2xl;
   }
 }
 
@@ -23,6 +25,6 @@
   }
 
   .card {
-    max-width: 325px;
+    @apply max-w-[325px] bg-lightGrey px-3 py-4 flex flex-col items-center rounded-2xl;
   }
 }
