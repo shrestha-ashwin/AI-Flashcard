@@ -5,19 +5,21 @@ export default function Pricing() {
         <h2 className="text-3xl text-center font-semibold mb-4">
           Retain more information, and learn better.
         </h2>
-        <h3 className="text-lg text-lightText">
+        <h3 className="text-lg text-lightText mb-14">
           Enjoy unlimited flashcards, and unlimited saves
         </h3>
       </div>
-      <div>
+
+      <div className="grid grid-cols-2 pricing-container max-w-[700px] gap-6 text-lightText justify-items-center mx-auto">
         <div className="pricing-card">
           <div className="">
-            <h3>Free</h3>
-            <div>
-              <span>$0</span>/month
+            <h3 className="mb-3">Free</h3>
+            <div className="text-black mb-5">
+              <span className="font-semibold text-4xl">$0</span> /month
             </div>
-            <p>Begin your learning journey here.</p>
+            <p className="mb-3">Begin your learning journey here.</p>
           </div>
+          <div className=""></div>
           <div>
             <div className="pricing-stat">
               <div></div>
@@ -26,13 +28,13 @@ export default function Pricing() {
             </div>
           </div>
         </div>
-        <div className="pricing-card">
+        <div className="pricing-card bg-black text-borderGrey">
           <div className="">
-            <h3>Pro</h3>
-            <div>
-              <span>$5</span>/month
+            <h3 className="mb-3">Pro</h3>
+            <div className=" mb-5">
+              <span className="font-semibold text-4xl">$5</span> /month
             </div>
-            <p>Accelerate your learning journey.</p>
+            <p className="mb-3">Accelerate your learning journey.</p>
           </div>
           <div>
             <div className="pricing-stat">
