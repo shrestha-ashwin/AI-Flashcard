@@ -4,10 +4,10 @@ export default function Hero() {
   return (
     <div className="flex justify-center mb-[70px]">
       <div className=" flex flex-col gap-2 items-center py-2 w-[1000px]">
-        <h2 className="font-bold text-[2rem] px-2 text-center mb-2 mt-4">
+        <h2 className="font-semibold text-[2rem] px-2 text-center mb-2 mt-4">
           Instant flashcards based on your topic choice
         </h2>
-        <p className="mb-9">
+        <p className="mb-9 text-lightText">
           Learn using the power of active recall, and enjoy the process!
         </p>
         <div className="mb-8 grid card-grid gap-x-9 gap-y-2 w-full justify-items-center">

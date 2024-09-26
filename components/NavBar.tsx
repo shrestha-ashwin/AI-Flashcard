@@ -1,6 +1,6 @@
 export default function NavBar() {
   return (
-    <nav className="h-14 w-full  text-black bg-white grid grid-cols-2 px-3 items-center py-2 mb-2">
+    <nav className="h-14 w-full  text-black bg-white grid grid-cols-2 px-3 items-center py-2 mb-10">
       <div className="justify-self-start font-semibold text-lg  ">
         AI FlashCard
       </div>
