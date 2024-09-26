@@ -43,4 +43,15 @@ const loading = (
   </svg>
 );
 
-export { typing, saving, loading };
+const tick = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    version="1.1"
+    viewBox="-5.0 -10.0 110.0 135.0"
+    width="18px"
+  >
+    <path d="m76.25 26.25-37.082 37.082-17.5-17.914-5.8359 6.25 23.336 23.332 42.914-42.918z" />
+  </svg>
+);
+
+export { typing, saving, loading, tick };

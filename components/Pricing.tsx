@@ -1,3 +1,5 @@
+import { tick } from "@/public/icons";
+
 export default function Pricing() {
   return (
     <section className="mb-6">
@@ -21,11 +23,18 @@ export default function Pricing() {
           </div>
           <div className=""></div>
           <div>
-            <div className="pricing-stat">
-              <div></div>
-              <div>1 flashcard query per day</div>
-              <div>1 dedicated space to save the flashcard</div>
+            <div className="pricing-stat mb-8">
+              <div className="my-5 border-[0.5px] border-borderGrey"></div>
+              <div className="pricing-benefit mb-2">
+                {tick}1 flashcard query per day
+              </div>
+              <div className="pricing-benefit">
+                {tick}1 dedicated space to save the flashcard
+              </div>
             </div>
+            <button className="bg-black text-lightGrey px-5 py-3 rounded-3xl w-full mb-3">
+              Get Started
+            </button>
           </div>
         </div>
         <div className="pricing-card bg-black text-borderGrey">
@@ -39,8 +48,12 @@ export default function Pricing() {
           <div>
             <div className="pricing-stat">
               <div></div>
-              <div>Unlimited flashcard queries per day</div>
-              <div>Unlimited dedicated space to save the flashcard</div>
+              <div className="text-[15px]">
+                Unlimited flashcard queries per day
+              </div>
+              <div className="text-[15px]">
+                Unlimited dedicated space to save the flashcard
+              </div>
             </div>
           </div>
         </div>

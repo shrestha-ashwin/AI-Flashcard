@@ -7,7 +7,7 @@ export default function Intro() {
       <p className="mb-6 text-lightText">
         An easy way to make flashcards, powered by AI.
       </p>
-      <button className="bg-black text-white px-5 py-2 rounded-3xl">
+      <button className="bg-black text-lightGrey px-5 py-2 rounded-3xl">
         Get Started
       </button>
     </div>
