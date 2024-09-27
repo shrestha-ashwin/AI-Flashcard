@@ -1,8 +1,8 @@
-import { tick } from "@/public/icons";
+import { tick, tickWhite } from "@/public/icons";
 
 export default function Pricing() {
   return (
-    <section className="mb-6">
+    <section className="mb-[70px]">
       <div className="flex flex-col gap-2 items-center">
         <h2 className="text-3xl text-center font-semibold mb-4">
           Retain more information, and learn better.
@@ -23,9 +23,9 @@ export default function Pricing() {
           </div>
           <div className=""></div>
           <div>
-            <div className="pricing-stat mb-8">
+            <div className="pricing-stat mb-14">
               <div className="my-5 border-[0.5px] border-borderGrey"></div>
-              <div className="pricing-benefit mb-2">
+              <div className="pricing-benefit mb-[10px]">
                 {tick}1 flashcard query per day
               </div>
               <div className="pricing-benefit">
@@ -46,15 +46,26 @@ export default function Pricing() {
             <p className="mb-3">Accelerate your learning journey.</p>
           </div>
           <div>
-            <div className="pricing-stat">
-              <div></div>
-              <div className="text-[15px]">
-                Unlimited flashcard queries per day
+            <div className="pricing-stat mb-8">
+              <div className="my-5 border-[0.5px] border-lightText opacity-100"></div>
+              <div className="pricing-benefit text-[15px] mb-2">
+                {tickWhite}
+                <div>
+                  <span className="font-semibold">Unlimited</span> flashcard
+                  queries per day
+                </div>
               </div>
-              <div className="text-[15px]">
-                Unlimited dedicated space to save the flashcard
+              <div className="pricing-benefit text-[15px] ">
+                {tickWhite}
+                <div>
+                  <span className="font-semibold">Unlimited</span> dedicated
+                  space to save the flashcard
+                </div>
               </div>
             </div>
+            <button className="bg-white text-black w-full px-5 py-3 rounded-3xl mb-3">
+              Choose Pro
+            </button>
           </div>
         </div>
       </div>
