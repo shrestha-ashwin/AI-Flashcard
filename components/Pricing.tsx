@@ -2,7 +2,7 @@ import { tick, tickWhite } from "@/public/icons";
 
 export default function Pricing() {
   return (
-    <section className="mb-[70px]">
+    <section className="mb-24">
       <div className="flex flex-col gap-2 items-center">
         <h2 className="text-3xl text-center font-semibold mb-4">
           Retain more information, and learn better.

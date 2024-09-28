@@ -28,6 +28,10 @@
   flex: none;
 }
 
+.info-grid {
+  grid-template-columns: 5fr 3fr;
+}
+
 @media (max-width: 526px) {
   .card {
     @apply max-w-[375px] bg-lightGrey px-7 py-5 flex flex-col items-start rounded-[28px];
