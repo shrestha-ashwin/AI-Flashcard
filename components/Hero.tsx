@@ -2,7 +2,7 @@ import { typing, loading, saving } from "@/public/icons";
 
 export default function Hero() {
   return (
-    <div className="flex justify-center mb-[70px] px-4">
+    <div className="flex justify-center mb-[95px] px-4">
       <div className=" flex flex-col gap-2 items-center py-2 w-[1090px]">
         <h2 className="font-semibold text-[2rem] px-2 text-center mb-2 mt-4">
           Instant flashcards based on your topic choice
