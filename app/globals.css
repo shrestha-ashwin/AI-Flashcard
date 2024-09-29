@@ -29,7 +29,15 @@
 }
 
 .info-grid {
-  grid-template-columns: 5fr 3fr;
+  grid-template-columns: 4fr 3fr;
+}
+
+.info-icon {
+  @apply w-[52px];
+}
+
+.info-highlight {
+  @apply font-semibold text-white;
 }
 
 @media (max-width: 526px) {
@@ -61,5 +69,13 @@
 
   .pricing-container {
     gap: 10px;
+  }
+}
+
+@media (max-width: 720px) {
+  .info-grid {
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 35px;
+    padding: 50px 0;
   }
 }

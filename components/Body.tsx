@@ -8,7 +8,7 @@ import Info from "./Info";
 export default function Body() {
   return (
     <div>
-      <div className="px-4">
+      <div className="">
         <Intro />
         <Info />
         <Hero />
