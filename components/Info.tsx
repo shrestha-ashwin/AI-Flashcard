@@ -11,7 +11,7 @@ import {
 export default function Info() {
   return (
     <div className="mb-[90px] bg-black">
-      <div className="info-grid grid max-w-[1000px] mx-auto px-5 py-9">
+      <div className="info-grid grid max-w-[1000px] mx-auto px-5 py-10">
         <div className="">
           <h2 className="text-3xl font-semibold mb-4 text-white text-center">
             AI Flashcards

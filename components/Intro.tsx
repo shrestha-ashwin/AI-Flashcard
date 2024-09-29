@@ -1,6 +1,6 @@
 export default function Intro() {
   return (
-    <div className="flex flex-col items-center mb-[70px] px-4">
+    <div className="flex flex-col items-center mb-[99px] px-4">
       <h1 className="text-4xl md:text-5xl font-semibold mb-4">
         The flashcard you need
       </h1>
