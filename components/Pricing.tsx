@@ -8,6 +8,12 @@ export default function Pricing() {
       Get Started
     </button>
   );
+
+  const proButton = (
+    <button className="bg-white text-black w-full px-5 py-3 rounded-3xl mb-3">
+      Choose Pro
+    </button>
+  );
   return (
     <section className="mb-24 px-4">
       <div className="flex flex-col gap-2 items-center">
@@ -39,9 +45,7 @@ export default function Pricing() {
                 {tick}1 dedicated space to save the flashcard
               </div>
             </div>
-            <SignInButton
-              forceRedirectUrl={process.env.DASHBOARD_URL}
-            ></SignInButton>
+            <SignIn button={button}></SignIn>
           </div>
         </div>
         <div className="pricing-card bg-black text-borderGrey">
@@ -70,7 +74,7 @@ export default function Pricing() {
                 </div>
               </div>
             </div>
-            <SignIn button={button} />
+            <SignIn button={proButton} />
           </div>
         </div>
       </div>
