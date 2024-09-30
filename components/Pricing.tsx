@@ -1,6 +1,13 @@
 import { tick, tickWhite } from "@/public/icons";
+import { SignInButton } from "@clerk/nextjs";
+import SignIn from "./SignIn";
 
 export default function Pricing() {
+  const button = (
+    <button className="bg-black text-lightGrey px-5 py-3 rounded-3xl w-full mb-3">
+      Get Started
+    </button>
+  );
   return (
     <section className="mb-24 px-4">
       <div className="flex flex-col gap-2 items-center">
@@ -32,9 +39,9 @@ export default function Pricing() {
                 {tick}1 dedicated space to save the flashcard
               </div>
             </div>
-            <button className="bg-black text-lightGrey px-5 py-3 rounded-3xl w-full mb-3">
-              Get Started
-            </button>
+            <SignInButton
+              forceRedirectUrl={process.env.DASHBOARD_URL}
+            ></SignInButton>
           </div>
         </div>
         <div className="pricing-card bg-black text-borderGrey">
@@ -63,9 +70,7 @@ export default function Pricing() {
                 </div>
               </div>
             </div>
-            <button className="bg-white text-black w-full px-5 py-3 rounded-3xl mb-3">
-              Choose Pro
-            </button>
+            <SignIn button={button} />
           </div>
         </div>
       </div>

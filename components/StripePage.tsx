@@ -12,13 +12,13 @@ if (process.env.NEXT_PUBLIC_STRIPE_KEY === undefined) {
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY!);
 
 export default function Home() {
-  const amount = 10;
+  const amount = 5;
 
   return (
-    <div className="max-w-[900px] mx-auto px-6">
-      <h1 className="text-center font-bold text-xl mb-4 mt-4">Payment</h1>
-      <p className="text-center mb-9 text-lg">
-        Ash asked you for <span className="font-semibold">${amount}</span>
+    <div className="max-w-[900px] mx-auto px-6 mt-28">
+      <h1 className="text-center font-semibold text-lg mb-8 mt-4">Payment</h1>
+      <p className="text-center mb-10 text-2xl">
+        Get Pro for <span className="font-semibold">${amount}</span>
       </p>
       <div>
         <Elements
