@@ -3,7 +3,7 @@
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import convertToSubCurrency from "@/lib/convertToSubCurrency";
-import CheckoutPage from "@/components/CheckoutPage";
+import CheckoutPage from "@/components/body/CheckoutPage";
 
 if (process.env.NEXT_PUBLIC_STRIPE_KEY === undefined) {
   throw new Error("STRIPE PUBLIC KEY not found");

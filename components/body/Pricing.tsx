@@ -1,5 +1,4 @@
 import { tick, tickWhite } from "@/public/icons";
-import { SignInButton } from "@clerk/nextjs";
 import SignIn from "./SignIn";
 
 export default function Pricing() {

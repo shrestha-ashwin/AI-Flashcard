@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import NavBar from "@/components/NavBar";
-import Body from "@/components/Body";
+import NavBar from "@/components/body/NavBar";
+import Body from "@/components/body/Body";
 
 export default function Home() {
   return (

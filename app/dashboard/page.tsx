@@ -1,8 +1,9 @@
+import NavBar from "@/components/dashboard/NavBar";
+
 export default function Page() {
   return (
     <div>
-      <div>This is the dashboard</div>
-      <a href="/">Return home</a>
+      <NavBar />
     </div>
   );
 }

@@ -1,15 +1,8 @@
 "use client";
 
-import {
-  useUser,
-  SignInButton,
-  SignedOut,
-  SignedIn,
-  SignOutButton,
-  UserButton,
-} from "@clerk/nextjs";
+import { useUser, SignedIn, UserButton } from "@clerk/nextjs";
 
-import SignInAuth from "@/components/SignInAuth";
+import SignInAuth from "@/components/body/SignInAuth";
 
 export default function NavBar() {
   const { user } = useUser();

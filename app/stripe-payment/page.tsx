@@ -1,4 +1,4 @@
-import StripePage from "@/components/StripePage";
+import StripePage from "@/components/body/StripePage";
 
 export default function Page() {
   return <StripePage />;
