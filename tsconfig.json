@@ -26,7 +26,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/api/checkout-session"
+    "app/api/checkout-session",
+    "app/api/generateCard"
   ],
   "exclude": ["node_modules"]
 }

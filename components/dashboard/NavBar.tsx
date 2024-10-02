@@ -3,6 +3,7 @@
 import { useUser, SignedIn, UserButton } from "@clerk/nextjs";
 
 import SignInAuth from "@/components/body/SignInAuth";
+import { headers } from "next/headers";
 
 export default function NavBar() {
   const { user } = useUser();
@@ -11,6 +12,7 @@ export default function NavBar() {
       Get Started
     </button>
   );
+
   return (
     <nav className="mb-[100px] sticky top-0">
       <div className="h-14 w-full  text-black bg-white flex justify-around px-3 items-center py-2 ">
@@ -28,6 +30,7 @@ export default function NavBar() {
         </div>
       </div>
       <div className="border-[0.5px] border-borderGrey"></div>
+      <button onClick={sendReq}>Send Request</button>
     </nav>
   );
 }
