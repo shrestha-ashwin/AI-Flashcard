@@ -30,7 +30,6 @@ export default function NavBar() {
         </div>
       </div>
       <div className="border-[0.5px] border-borderGrey"></div>
-      <button onClick={sendReq}>Send Request</button>
     </nav>
   );
 }
