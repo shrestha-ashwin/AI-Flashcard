@@ -292,6 +292,36 @@ const cute_robot = (
   </svg>
 );
 
+const create = (
+  <svg
+    xmlnsDc="http://purl.org/dc/elements/1.1/"
+    xmlnsCc="http://creativecommons.org/ns#"
+    xmlnsRdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlnsSvg="http://www.w3.org/2000/svg"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsSodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlnsInkscape="http://www.inkscape.org/namespaces/inkscape"
+    version="1.1"
+    x="0px"
+    y="0px"
+    viewBox="0 0 100 125"
+    width="40px"
+  >
+    <g transform="translate(0,-952.36218)">
+      <path
+        d="m 48,986.36218 0,14.00002 -14,0 0,4 14,0 0,14 4,0 0,-14 14,0 0,-4 -14,0 0,-14.00002 z"
+        fill="#000000"
+        fill-opacity="1"
+        stroke="none"
+        marker="none"
+        visibility="visible"
+        display="inline"
+        overflow="visible"
+      />
+    </g>
+  </svg>
+);
+
 export {
   typing,
   saving,
@@ -307,4 +337,5 @@ export {
   active,
   robot,
   cute_robot,
+  create,
 };

@@ -2,9 +2,6 @@
 
 import { useUser, SignedIn, UserButton } from "@clerk/nextjs";
 
-import SignInAuth from "@/components/body/SignInAuth";
-import { headers } from "next/headers";
-
 export default function NavBar() {
   const { user } = useUser();
   const button = (
@@ -14,7 +11,7 @@ export default function NavBar() {
   );
 
   return (
-    <nav className="mb-[100px] sticky top-0">
+    <nav className="mb-[70px] sticky top-0">
       <div className="h-14 w-full  text-black bg-white flex justify-around px-3 items-center py-2 ">
         <div className="flex gap-2 ">
           <div className="mr-2 justify-self-center font-medium  sm:max-lg:mr-[45%] lg:mr-[50%]">
