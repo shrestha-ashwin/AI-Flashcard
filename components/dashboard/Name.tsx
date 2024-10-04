@@ -1,4 +1,4 @@
-export default function Name() {
+export default function Name({ hideTextBox, sendReq }) {
   return (
     <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]  bg-white px-5 py-6 rounded-xl max-w-[600px]">
       <h2 className="font-medium text-lg mb-1">Create Flashcard</h2>
@@ -14,10 +14,16 @@ export default function Name() {
         />
       </form>
       <div className="flex gap-2 justify-end">
-        <button className="border-[1.4px] border-borderGrey px-4 py-[6px] rounded-md">
+        <button
+          className="border-[1.4px] border-borderGrey px-4 py-[6px] rounded-md"
+          onClick={hideTextBox}
+        >
           Cancel
         </button>
-        <button className="text-lightGrey bg-black px-4 py-[6px] rounded-md">
+        <button
+          className="text-lightGrey bg-black px-4 py-[6px] rounded-md"
+          onClick={sendReq}
+        >
           Create
         </button>
       </div>

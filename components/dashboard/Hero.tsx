@@ -1,5 +1,4 @@
 import CreateFlashcard from "./CreateFlashcard";
-import Name from "./Name";
 
 export default function Hero() {
   return (
@@ -17,7 +16,6 @@ export default function Hero() {
           </div>
           <div>Create your flashcard</div>
         </section>
-        <Name />
       </div>
     </div>
   );
