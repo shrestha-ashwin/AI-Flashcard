@@ -1,4 +1,17 @@
-export default function Name({ hideTextBox, sendReq }) {
+import { useState } from "react";
+
+export default function Name({ hideTextBox, sendReq, changeMessage }) {
+  const [inputValue, setInputValue] = useState("");
+
+  const sendRequest = () => {
+    changeMessage(inputValue);
+    sendReq();
+  };
+
+  const handleInputChange = (e: Event) => {
+    setInputValue(e.target.value);
+  };
+
   return (
     <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]  bg-white px-5 py-6 rounded-xl max-w-[600px]">
       <h2 className="font-medium text-lg mb-1">Create Flashcard</h2>
@@ -11,6 +24,7 @@ export default function Name({ hideTextBox, sendReq }) {
           type="text"
           placeholder="type your topic"
           className="ml-[1px] border-[1px] border-borderGrey px-2 py-1"
+          onChange={handleInputChange}
         />
       </form>
       <div className="flex gap-2 justify-end">
@@ -22,7 +36,7 @@ export default function Name({ hideTextBox, sendReq }) {
         </button>
         <button
           className="text-lightGrey bg-black px-4 py-[6px] rounded-md"
-          onClick={sendReq}
+          onClick={sendRequest}
         >
           Create
         </button>
