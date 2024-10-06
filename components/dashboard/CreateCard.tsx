@@ -1,7 +1,7 @@
 "use client";
 
 import Name from "./Name";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export default function CreateCard() {
   const [message, setMessage] = useState("");
