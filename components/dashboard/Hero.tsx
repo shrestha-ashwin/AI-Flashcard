@@ -1,10 +1,10 @@
-import CreateFlashcard from "./CreateFlashcard";
+import CreateCard from "./CreateCard";
 
 export default function Hero() {
   return (
     <div className="">
       <div className="max-w-[1000px] mx-auto px-10 ">
-        <CreateFlashcard />
+        <CreateCard />
         <section className="bg-white px-6 py-3">
           <div className="mb-6">
             <h2 className="text-[#9c36b5] font-semibold text-2xl mb-1">

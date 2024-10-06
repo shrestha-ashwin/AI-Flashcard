@@ -3,7 +3,7 @@
 import Name from "./Name";
 import { useEffect, useState } from "react";
 
-export default function CreateFlashcard() {
+export default function CreateCard() {
   const [message, setMessage] = useState("");
   const [textBox, setTextBox] = useState(false);
 
