@@ -1,4 +1,4 @@
-import CreateFlashcard from "./CreateFlashcard";
+import CreateFlashcard from "@/components/dashboard/CreateFlashcard";
 
 export default function Hero() {
   return (
