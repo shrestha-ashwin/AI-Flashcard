@@ -30,7 +30,9 @@ export async function POST(req: Request) {
       response_format: { type: "json_object" },
     });
 
-    const response = JSON.parse(completion.choices[0].message.content);
+    const response = JSON.parse(
+      completion.choices[0].message.content as string
+    );
     return NextResponse.json(response.flashcards);
   } catch (err) {
     console.error(err);
