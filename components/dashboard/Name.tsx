@@ -1,14 +1,21 @@
 import { useState } from "react";
 
-export default function Name({ hideTextBox, sendReq, changeMessage }) {
+export default function Name({
+  hideTextBox,
+
+  changeMessage,
+}: {
+  hideTextBox: () => void;
+
+  changeMessage: (message: string) => void;
+}) {
   const [inputValue, setInputValue] = useState("");
 
   const sendRequest = () => {
     changeMessage(inputValue);
-    sendReq();
   };
 
-  const handleInputChange = (e: Event) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
   };
 

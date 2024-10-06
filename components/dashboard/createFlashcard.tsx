@@ -1,11 +1,33 @@
 "use client";
 
 import Name from "./Name";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function CreateFlashcard() {
   const [message, setMessage] = useState("");
   const [textBox, setTextBox] = useState(false);
+
+  useEffect(() => {
+    if (message) {
+      const sendReq = async () => {
+        console.log(message);
+        setTextBox(false);
+        try {
+          const data = await fetch("/api/generateCard", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message }),
+          });
+          console.log("it reached client");
+          const response = await data.json();
+          console.log(response);
+        } catch (err) {
+          console.error(err);
+        }
+      };
+      sendReq();
+    }
+  }, [message]);
 
   const hideTextBox = () => {
     setTextBox(false);
@@ -15,26 +37,11 @@ export default function CreateFlashcard() {
     setTextBox(true);
   };
 
-  const changeMessage = (message) => {
+  const changeMessage = (message: string) => {
     setMessage(message);
     console.log(message);
   };
 
-  const sendReq = async () => {
-    setTextBox(false);
-    try {
-      const data = await fetch("/api/generateCard", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message }),
-      });
-      console.log("it reached client");
-      const response = await data.json();
-      console.log(response);
-    } catch (err) {
-      console.error(err);
-    }
-  };
   return (
     <div className="flex justify-end">
       <button
@@ -45,11 +52,7 @@ export default function CreateFlashcard() {
         Create New Flashcard
       </button>
       {textBox ? (
-        <Name
-          hideTextBox={hideTextBox}
-          sendReq={sendReq}
-          changeMessage={setMessage}
-        />
+        <Name hideTextBox={hideTextBox} changeMessage={changeMessage} />
       ) : (
         ""
       )}
