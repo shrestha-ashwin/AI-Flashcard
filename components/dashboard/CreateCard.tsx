@@ -1,11 +1,13 @@
-"use client";
-
 import Name from "./Name";
 import { useEffect, useState, useRef } from "react";
+import { redirect } from "next/navigation";
+import Page from "../../app/dashboard/new/page";
 
 export default function CreateCard() {
   const [message, setMessage] = useState("");
   const [textBox, setTextBox] = useState(false);
+  const [flashCard, setFlashCard] = useState([]);
+  const hasRendered = useRef(false);
 
   useEffect(() => {
     if (message) {
@@ -20,7 +22,7 @@ export default function CreateCard() {
           });
           console.log("it reached client");
           const response = await data.json();
-          console.log(response);
+          setFlashCard(response);
         } catch (err) {
           console.error(err);
         }
@@ -28,6 +30,13 @@ export default function CreateCard() {
       sendReq();
     }
   }, [message]);
+
+  useEffect(() => {
+    if (hasRendered.current && flashCard.length > 0) {
+      redirect("/dashboard/new");
+    }
+    hasRendered.current = true;
+  }, [flashCard]);
 
   const hideTextBox = () => {
     setTextBox(false);

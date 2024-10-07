@@ -1,6 +1,11 @@
+"use client";
+
 import CreateCard from "./CreateCard";
+import { useState } from "react";
 
 export default function Hero() {
+  const [flashCards, setFlashCards] = useState([]);
+
   return (
     <div className="">
       <div className="max-w-[1000px] mx-auto px-10 ">
