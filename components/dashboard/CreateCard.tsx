@@ -1,7 +1,6 @@
 import Name from "./Name";
 import { useEffect, useState, useRef } from "react";
 import { redirect } from "next/navigation";
-import Page from "../../app/dashboard/new/page";
 
 export default function CreateCard() {
   const [message, setMessage] = useState("");
@@ -36,6 +35,7 @@ export default function CreateCard() {
       redirect("/dashboard/new");
     }
     hasRendered.current = true;
+    console.log("ran");
   }, [flashCard]);
 
   const hideTextBox = () => {
