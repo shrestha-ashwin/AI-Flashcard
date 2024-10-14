@@ -1,14 +1,14 @@
 import Name from "./Name";
 import { useEffect, useState, useRef } from "react";
-import { redirect } from "next/navigation";
-import Link from "next/link";
-import path from "path";
+import { useRouter } from "next/navigation";
+import { FlashCardContext } from "@/lib/flashCardContext";
 
 export default function CreateCard() {
   const [message, setMessage] = useState("");
   const [textBox, setTextBox] = useState(false);
-  const [flashCard, setFlashCard] = useState([]);
   const hasRendered = useRef(false);
+  const router = useRouter();
+  const { flashCard, setFlashCard } = FlashCardContext();
 
   useEffect(() => {
     if (message) {
@@ -34,11 +34,11 @@ export default function CreateCard() {
 
   useEffect(() => {
     if (hasRendered.current && flashCard.length > 0) {
-      // redirect("/dashboard/new");
+      router.push("/dashboard/new");
     }
     hasRendered.current = true;
     console.log("ran");
-  }, [flashCard]);
+  }, [flashCard, router]);
 
   const hideTextBox = () => {
     setTextBox(false);
