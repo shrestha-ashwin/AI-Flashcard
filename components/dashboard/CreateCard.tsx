@@ -1,6 +1,8 @@
 import Name from "./Name";
 import { useEffect, useState, useRef } from "react";
 import { redirect } from "next/navigation";
+import Link from "next/link";
+import path from "path";
 
 export default function CreateCard() {
   const [message, setMessage] = useState("");
@@ -32,7 +34,7 @@ export default function CreateCard() {
 
   useEffect(() => {
     if (hasRendered.current && flashCard.length > 0) {
-      redirect("/dashboard/new");
+      // redirect("/dashboard/new");
     }
     hasRendered.current = true;
     console.log("ran");
