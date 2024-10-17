@@ -40,6 +40,16 @@
   @apply font-semibold text-white;
 }
 
+.flashcard {
+  @apply bg-black text-lightGrey h-[200px] px-4 py-5 rounded-lg text-center;
+}
+
+.flashcard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 30px;
+}
+
 @media (max-width: 526px) {
   .card {
     @apply max-w-[375px] bg-lightGrey px-7 py-5 flex flex-col items-start rounded-[28px];
@@ -70,16 +80,6 @@
   .pricing-container {
     gap: 10px;
   }
-}
-
-.flashcard {
-  @apply bg-black text-lightGrey h-[200px] px-4 py-5 rounded-lg text-center;
-}
-
-.flashcard-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-  gap: 30px;
 }
 
 @media (max-width: 720px) {

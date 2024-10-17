@@ -27,7 +27,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/api/checkout-session",
-    "app/api/generateCard"
+    "app/api/generateCard",
+    "lib/flashCardContext.jsx"
   ],
   "exclude": ["node_modules"]
 }

@@ -33,6 +33,12 @@ export default function Name({
     setInputValue(e.target.value);
   };
 
+  const handleEnterEvent = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      setInputValue(e.target.value);
+    }
+  };
+
   return (
     <div className="w-full h-[100vh] bg-[rgba(0,0,0,0.5)] fixed top-0 left-0">
       <div
@@ -50,6 +56,7 @@ export default function Name({
             placeholder="type your topic"
             className="ml-[1px] border-[1px] border-borderGrey px-2 py-1"
             onChange={handleInputChange}
+            onKeyDown={handleEnterEvent}
           />
         </form>
         <div className="flex gap-2 justify-end">
