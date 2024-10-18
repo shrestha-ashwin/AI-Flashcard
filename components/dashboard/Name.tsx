@@ -14,7 +14,6 @@ export default function Name({
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
-    document.addEventListener("submit", handleSubmit);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -49,7 +48,7 @@ export default function Name({
         <h3 className="text-lightText mb-5 text-[15px]">
           Type the topic for which flashcards are to be generated
         </h3>
-        <form className="flex flex-col mb-11">
+        <form className="flex flex-col mb-11" onSubmit={sendRequest}>
           <label className="font-medium mb-[6px] text-[15px]">Topic</label>
           <input
             type="text"
