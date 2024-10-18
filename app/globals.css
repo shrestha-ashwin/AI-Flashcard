@@ -40,14 +40,36 @@
   @apply font-semibold text-white;
 }
 
-.flashcard {
-  @apply bg-black text-lightGrey h-[200px] px-4 py-5 rounded-lg text-center;
-}
-
 .flashcard-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 30px;
+}
+
+.flashcard {
+  @apply bg-[#fff] text-lightGrey w-full h-[235px] rounded-lg text-center hover:cursor-pointer;
+  perspective: 1000px;
+}
+
+.flashcard-inner {
+  @apply relative w-full h-full;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+}
+
+.flashcard.flipped .flashcard-inner {
+  transform: rotateY(180deg);
+}
+
+.flashcard-front,
+.flashcard-back {
+  @apply absolute w-full h-full bg-[rgb(73,80,87)] pt-5 px-4 text-[#dee2e6];
+  backface-visibility: hidden;
+  box-shadow: 1px 1px 10px 0 rgba(73, 80, 87, 0.6);
+}
+
+.flashcard-back {
+  transform: rotateY(180deg);
 }
 
 @media (max-width: 526px) {

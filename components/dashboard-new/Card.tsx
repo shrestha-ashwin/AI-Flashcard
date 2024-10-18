@@ -1,19 +1,25 @@
+import { useState } from "react";
+
 type FlashCard = {
   front: string;
   back: string;
 };
 
-export default function Card({ cards }: { cards: FlashCard[] }) {
+export default function Card({ card }: { card: FlashCard }) {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const handleClick = () => {
+    setIsFlipped(!isFlipped);
+  };
   return (
-    <ul className="max-w-[800px] mx-auto px-4 flashcard-grid bg-">
-      {cards.map((card, id) => {
-        console.log(card);
-        return (
-          <li key={id} className="flashcard">
-            {card.front}
-          </li>
-        );
-      })}
-    </ul>
+    <li
+      className={`flashcard ${isFlipped ? "flipped" : ""}`}
+      onClick={handleClick}
+    >
+      <div className="flashcard-inner">
+        <div className="flashcard-front">{card.front}</div>
+        <div className="flashcard-back">{card.back}</div>
+      </div>
+    </li>
   );
 }
