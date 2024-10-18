@@ -14,6 +14,7 @@ export default function Name({
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("submit", handleSubmit);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -25,18 +26,18 @@ export default function Name({
     }
   };
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setInputValue(e.target.value);
+    hideTextBox();
+  };
+
   const sendRequest = () => {
     changeMessage(inputValue);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
-  };
-
-  const handleEnterEvent = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
-      setInputValue(e.target.value);
-    }
   };
 
   return (
@@ -49,14 +50,13 @@ export default function Name({
         <h3 className="text-lightText mb-5 text-[15px]">
           Type the topic for which flashcards are to be generated
         </h3>
-        <form className="flex flex-col mb-11">
+        <form className="flex flex-col mb-11" onSubmit={sendRequest}>
           <label className="font-medium mb-[6px] text-[15px]">Topic</label>
           <input
             type="text"
             placeholder="type your topic"
             className="ml-[1px] border-[1px] border-borderGrey px-2 py-1"
             onChange={handleInputChange}
-            onKeyDown={handleEnterEvent}
           />
         </form>
         <div className="flex gap-2 justify-end">
