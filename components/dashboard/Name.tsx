@@ -28,7 +28,6 @@ export default function Name({
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setInputValue(e.target.value);
     hideTextBox();
   };
 
@@ -50,7 +49,7 @@ export default function Name({
         <h3 className="text-lightText mb-5 text-[15px]">
           Type the topic for which flashcards are to be generated
         </h3>
-        <form className="flex flex-col mb-11" onSubmit={sendRequest}>
+        <form className="flex flex-col mb-11">
           <label className="font-medium mb-[6px] text-[15px]">Topic</label>
           <input
             type="text"
