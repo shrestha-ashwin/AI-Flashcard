@@ -6,14 +6,21 @@ type FlashCard = {
 };
 
 export default function Cards({ cards }: { cards: FlashCard[] }) {
-  const data = async () => {
-    await fetch("/api/save-card", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(cards),
-    });
+  const saveCards = async () => {
+    try {
+      const data = await fetch("/api/save-card", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(cards),
+      });
+
+      const res = await data.json();
+      console.log(res);
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   return (
