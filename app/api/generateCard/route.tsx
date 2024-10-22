@@ -16,7 +16,7 @@ You should return in the following JSON format:
 
 export async function POST(req: Request) {
   try {
-    const { message } = await req.json();
+    const { name } = await req.json();
 
     const completion = await openai.chat.completions.create({
       model: "gpt-4o",
@@ -24,7 +24,7 @@ export async function POST(req: Request) {
         { role: "system", content: system },
         {
           role: "user",
-          content: message,
+          content: name,
         },
       ],
       response_format: { type: "json_object" },

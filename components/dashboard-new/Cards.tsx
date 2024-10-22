@@ -5,7 +5,13 @@ type FlashCard = {
   back: string;
 };
 
-export default function Cards({ cards }: { cards: FlashCard[] }) {
+export default function Cards({
+  cards,
+  name,
+}: {
+  cards: FlashCard[];
+  name: string;
+}) {
   const saveCards = async () => {
     try {
       const data = await fetch("/api/save-card", {
@@ -13,7 +19,7 @@ export default function Cards({ cards }: { cards: FlashCard[] }) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ cards }),
+        body: JSON.stringify({ cards, name }),
       });
 
       const res = await data.json();

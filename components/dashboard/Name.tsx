@@ -3,11 +3,11 @@ import { useEffect, useRef, useState } from "react";
 export default function Name({
   hideTextBox,
 
-  changeMessage,
+  changeName,
 }: {
   hideTextBox: () => void;
 
-  changeMessage: (message: string) => void;
+  changeName: (name: string) => void;
 }) {
   const [inputValue, setInputValue] = useState("");
   const [invalidInput, setInvalidInput] = useState(false);
@@ -37,7 +37,7 @@ export default function Name({
 
   const sendRequest = () => {
     if (inputValue.trim()) {
-      changeMessage(inputValue);
+      changeName(inputValue);
     } else {
       setInvalidInput(true);
     }

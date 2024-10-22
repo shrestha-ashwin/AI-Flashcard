@@ -4,22 +4,21 @@ import { useRouter } from "next/navigation";
 import { FlashCardContext } from "@/lib/flashCardContext";
 
 export default function CreateCard() {
-  const [message, setMessage] = useState("");
+  const [name, setName] = useState("");
   const [textBox, setTextBox] = useState(false);
   const hasRendered = useRef(false);
   const router = useRouter();
   const { flashCard, setFlashCard } = FlashCardContext();
 
   useEffect(() => {
-    if (message) {
+    if (name) {
       const sendReq = async () => {
-        console.log(message);
         setTextBox(false);
         try {
           const data = await fetch("/api/generateCard", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ message }),
+            body: JSON.stringify({ name }),
           });
           console.log("it reached client");
           const response = await data.json();
@@ -30,15 +29,15 @@ export default function CreateCard() {
       };
       sendReq();
     }
-  }, [message]);
+  }, [name, setFlashCard]);
 
   useEffect(() => {
     if (hasRendered.current && flashCard.length > 0) {
-      router.push("/dashboard/new");
+      router.push(`/dashboard/new?name=${name}`);
     }
     hasRendered.current = true;
     console.log("ran");
-  }, [flashCard, router]);
+  }, [flashCard, router, name]);
 
   const hideTextBox = () => {
     setTextBox(false);
@@ -48,9 +47,8 @@ export default function CreateCard() {
     setTextBox(true);
   };
 
-  const changeMessage = (message: string) => {
-    setMessage(message);
-    console.log(message);
+  const changeName = (name: string) => {
+    setName(name);
   };
 
   return (
@@ -63,7 +61,7 @@ export default function CreateCard() {
         Create New Flashcard
       </button>
       {textBox ? (
-        <Name hideTextBox={hideTextBox} changeMessage={changeMessage} />
+        <Name hideTextBox={hideTextBox} changeName={changeName} />
       ) : (
         ""
       )}
