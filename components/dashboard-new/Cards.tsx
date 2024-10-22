@@ -13,7 +13,7 @@ export default function Cards({ cards }: { cards: FlashCard[] }) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(cards),
+        body: JSON.stringify({ cards }),
       });
 
       const res = await data.json();

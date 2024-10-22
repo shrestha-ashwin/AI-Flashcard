@@ -10,29 +10,37 @@ export default function Name({
   changeMessage: (message: string) => void;
 }) {
   const [inputValue, setInputValue] = useState("");
+  const [invalidInput, setInvalidInput] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
+        hideTextBox();
+      }
+    };
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
-
-  const handleClickOutside = (e: MouseEvent) => {
-    if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
-      hideTextBox();
-    }
-  };
+  });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    hideTextBox();
-    sendRequest();
+    if (inputValue.trim()) {
+      hideTextBox();
+      sendRequest();
+    } else {
+      setInvalidInput(true);
+    }
   };
 
   const sendRequest = () => {
-    changeMessage(inputValue);
+    if (inputValue.trim()) {
+      changeMessage(inputValue);
+    } else {
+      setInvalidInput(true);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -56,7 +64,15 @@ export default function Name({
             placeholder="type your topic"
             className="ml-[1px] border-[1px] border-borderGrey px-2 py-1"
             onChange={handleInputChange}
+            onFocus={(e) => setInvalidInput(false)}
           />
+          {invalidInput ? (
+            <p className="text-sm mt-1 ml-[5px] text-red-400">
+              Cannot be blank
+            </p>
+          ) : (
+            ""
+          )}
         </form>
         <div className="flex gap-2 justify-end">
           <button
