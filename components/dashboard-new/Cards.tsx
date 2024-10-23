@@ -26,7 +26,7 @@ export default function Cards({
 
       const res = await data.json();
 
-      // router.push("/");
+      router.push("/");
     } catch (e) {
       console.error(e);
     }
