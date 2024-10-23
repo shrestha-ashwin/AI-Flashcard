@@ -1,4 +1,5 @@
 import Card from "./Card";
+import { useRouter } from "next/navigation";
 
 type FlashCard = {
   front: string;
@@ -12,6 +13,7 @@ export default function Cards({
   cards: FlashCard[];
   name: string;
 }) {
+  const router = useRouter();
   const saveCards = async () => {
     try {
       const data = await fetch("/api/save-card", {
@@ -23,7 +25,8 @@ export default function Cards({
       });
 
       const res = await data.json();
-      console.log(res);
+
+      // router.push("/");
     } catch (e) {
       console.error(e);
     }
