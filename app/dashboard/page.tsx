@@ -6,12 +6,13 @@ import { useSearchParams } from "next/navigation";
 export default function Page() {
   const searchParams = useSearchParams();
 
-  const isCardSaved = searchParams.get("cardSaved");
+  let isCardSaved = Boolean(searchParams.get("status"));
+  console.log(isCardSaved);
 
   return (
     <div className="bg-[#f1f3f5] h-[100vh] relative ">
       <NavBar />
-      <Hero isCardSaved />
+      <Hero isCardSaved={isCardSaved} />
     </div>
   );
 }

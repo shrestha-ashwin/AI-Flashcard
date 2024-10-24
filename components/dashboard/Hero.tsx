@@ -3,12 +3,14 @@
 import CreateCard from "./CreateCard";
 import { useState } from "react";
 
-export default function Hero(isCardSaved) {
+export default function Hero({ isCardSaved }) {
   const [flashCards, setFlashCards] = useState([]);
+  console.log(isCardSaved);
 
   return (
     <div className="">
       <div className="max-w-[1000px] mx-auto px-10 ">
+        {isCardSaved ? <p>Saved</p> : ""}
         <CreateCard />
         <section className="bg-white px-6 py-3">
           <div className="mb-6">
