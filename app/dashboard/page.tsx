@@ -6,7 +6,7 @@ import { useSearchParams } from "next/navigation";
 export default function Page() {
   const searchParams = useSearchParams();
 
-  let isCardSaved = Boolean(searchParams.get("status"));
+  const isCardSaved = searchParams.get("status") === "true";
   console.log(isCardSaved);
 
   return (
