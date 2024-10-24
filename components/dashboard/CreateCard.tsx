@@ -10,12 +10,18 @@ export default function CreateCard() {
   const router = useRouter();
   const { flashCard, setFlashCard } = FlashCardContext();
   const [isCreatingCard, setIsCreatingCard] = useState(false);
+  const nameRef = useRef(name);
+
+  useEffect(() => {
+    nameRef.current = name;
+  }, [name]);
 
   useEffect(() => {
     if (name) {
       const sendReq = async () => {
         setTextBox(false);
         setIsCreatingCard(true);
+        setFlashCard([]);
         try {
           const data = await fetch("/api/generateCard", {
             method: "POST",
@@ -35,10 +41,10 @@ export default function CreateCard() {
   useEffect(() => {
     if (hasRendered.current && flashCard.length > 0 && isCreatingCard) {
       setIsCreatingCard(false);
-      router.push(`/dashboard/new?name=${name}`);
+      router.push(`/dashboard/new?name=${nameRef.current}`);
     }
     hasRendered.current = true;
-  }, [flashCard, router, name, isCreatingCard]);
+  }, [flashCard, router, isCreatingCard]);
 
   const hideTextBox = () => {
     setTextBox(false);
