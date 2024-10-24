@@ -3,7 +3,7 @@
 import CreateCard from "./CreateCard";
 import { useState } from "react";
 
-export default function Hero() {
+export default function Hero(isCardSaved) {
   const [flashCards, setFlashCards] = useState([]);
 
   return (

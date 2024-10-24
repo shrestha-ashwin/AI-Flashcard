@@ -22,7 +22,6 @@ export default function CreateCard() {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ name }),
           });
-          console.log("it reached client");
           const response = await data.json();
           setFlashCard(response);
         } catch (err) {
@@ -39,7 +38,6 @@ export default function CreateCard() {
       router.push(`/dashboard/new?name=${name}`);
     }
     hasRendered.current = true;
-    console.log("ran");
   }, [flashCard, router, name, isCreatingCard]);
 
   const hideTextBox = () => {

@@ -24,9 +24,9 @@ export default function Cards({
         body: JSON.stringify({ cards, name }),
       });
 
-      const res = await data.json();
+      const { cardSaved } = await data.json();
 
-      router.push("/");
+      router.push(`/dashboard?status=${cardSaved}`);
     } catch (e) {
       console.error(e);
     }
@@ -36,7 +36,6 @@ export default function Cards({
     <div className="mb-[100px]">
       <ul className="max-w-[800px] mx-auto px-4 flashcard-grid mb-[80px]">
         {cards.map((card, id) => {
-          console.log(card);
           return <Card key={id} card={card} />;
         })}
       </ul>

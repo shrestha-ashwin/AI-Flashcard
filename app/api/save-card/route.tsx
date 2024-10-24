@@ -18,8 +18,9 @@ export async function POST(req: Request) {
 
     await setDoc(setNameRef, { flashcards: cards });
 
-    return NextResponse.json("Flashcard successfully saved.");
+    return NextResponse.json({ cardSaved: true });
   } catch (e) {
     console.error("Error saving flashcards: ", e);
+    return NextResponse.json({ cardSaved: false });
   }
 }
