@@ -3,13 +3,9 @@
 import CreateCard from "./CreateCard";
 import { useState } from "react";
 
-export default function Hero({ isCardSaved }) {
+export default function Hero({ isCardSaved }: { isCardSaved: boolean }) {
   const [flashCards, setFlashCards] = useState([]);
   console.log(isCardSaved);
-
-  setTimeout(() => {
-    isCardSaved = false;
-  }, 2000);
 
   return (
     <div className="">

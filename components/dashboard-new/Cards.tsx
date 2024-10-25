@@ -24,10 +24,9 @@ export default function Cards({
         body: JSON.stringify({ cards, name }),
       });
 
-      const { status } = await data.json();
-      console.log(`cards: ${status}`);
+      const { cardSaved } = await data.json();
 
-      router.push(`/dashboard?status=${status}`);
+      router.push(`/dashboard?status=${cardSaved}`);
     } catch (e) {
       console.error(e);
     }
