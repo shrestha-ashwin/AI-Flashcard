@@ -1,11 +1,15 @@
 "use client";
 
 import CreateCard from "./CreateCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Hero({ isCardSaved }: { isCardSaved: boolean }) {
-  const [flashCards, setFlashCards] = useState([]);
+  const [status, setStatus] = useState(isCardSaved);
   console.log(isCardSaved);
+
+  setTimeout(() => {
+    setStatus(false);
+  }, 4000);
 
   return (
     <div className="">
@@ -13,7 +17,7 @@ export default function Hero({ isCardSaved }: { isCardSaved: boolean }) {
         <CreateCard />
         <section className="bg-white px-6 py-3">
           <div className="mb-6 relative">
-            {isCardSaved ? (
+            {status ? (
               <p className="inline-block px-8 py-2 bg-white font-medium absolute -top-[80px] left-[320px] rounded-md">
                 Saved
               </p>
