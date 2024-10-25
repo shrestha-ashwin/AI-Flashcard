@@ -6,6 +6,10 @@ import { auth } from "@clerk/nextjs/server";
 export async function POST(req: Request) {
   try {
     const { userId } = auth();
+
+    if (!userId) {
+      return NextResponse.json("user is not authenticated");
+    }
     const { cards, name } = await req.json();
     const userDocRef = doc(db, "users", userId); //all documents in the collection "users"
     const userdocSnap = await getDoc(userDocRef);

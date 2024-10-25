@@ -2,6 +2,7 @@
 
 import CreateCard from "./CreateCard";
 import { useEffect, useState } from "react";
+import { saveTick } from "@/public/icons";
 
 export default function Hero({ isCardSaved }: { isCardSaved: boolean }) {
   const [status, setStatus] = useState(isCardSaved);
@@ -18,9 +19,10 @@ export default function Hero({ isCardSaved }: { isCardSaved: boolean }) {
         <section className="bg-white px-6 py-3">
           <div className="mb-6 relative">
             {status ? (
-              <p className="inline-block px-8 py-2 bg-white font-medium absolute -top-[80px] left-[320px] rounded-md">
-                Saved
-              </p>
+              <div className="save">
+                {saveTick}
+                <p className="pr-2">Saved</p>
+              </div>
             ) : (
               ""
             )}
