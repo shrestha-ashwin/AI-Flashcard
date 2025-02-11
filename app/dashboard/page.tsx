@@ -1,21 +1,23 @@
 "use client";
+import { Suspense } from "react";
 import NavBar from "@/components/dashboard/NavBar";
 import Hero from "@/components/dashboard/Hero";
-import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
-export default function Page() {
+function SearchParamsComponent() {
   const searchParams = useSearchParams();
-  const [isCardSaved, setIsCardSaved] = useState(false);
+  const isCardSaved = searchParams.get("status") === "true";
 
-  useEffect(() => {
-    setIsCardSaved(searchParams.get("status") === "true");
-  }, [searchParams]);
+  return <Hero isCardSaved={isCardSaved} />;
+}
 
+export default function Page() {
   return (
-    <div className="bg-[#f1f3f5] h-[100vh] relative ">
+    <div className="bg-[#f1f3f5] h-[100vh] relative">
       <NavBar />
-      <Hero isCardSaved={isCardSaved} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <SearchParamsComponent />
+      </Suspense>
     </div>
   );
 }
